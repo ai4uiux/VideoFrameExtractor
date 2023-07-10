@@ -1,31 +1,34 @@
-Video Frame Extractor
-This Python script allows you to extract frames from video files and save them as individual images using the OpenCV library. It provides a user-friendly interface for selecting video files using a file dialog, and you can specify the frame rate for extraction. The script also displays the progress of the frame extraction process for each video file.
+# Face Recognition Image Sorting
 
-Getting Started
-Clone the repository or download the video_frame_extractor.py script.
+This repository contains a Python script that uses artificial intelligence to identify individuals in a large number of images and sort them into respective folders.
 
-Install the necessary dependencies:
+## How it Works
 
-bash
-Copy code
-pip install opencv-python tkinter
-Run the script:
+The script uses the `face_recognition` library to detect faces in images and group them based on similarity. It also uses the DBSCAN clustering algorithm from the `scikit-learn` library to group similar-looking faces into the same folder. The script is user-friendly, asking for the input and output directories through a popup dialog. It processes all images in the input directory and its subdirectories, and copies the sorted images to the output directory, grouped into subdirectories based on the face they contain.
 
-bash
-Copy code
-python video_frame_extractor.py
-Choose the video files using the file dialog. Supported formats are .mp4, .avi, and .mkv.
+## Installation
 
-The frames will be extracted based on the specified frame rate and saved as .png images in the output directory.
+1. Clone this repository to your local machine.
+2. Install the required Python libraries by running `pip install -r requirements.txt` in your terminal.
 
-Progress status will be displayed for each video file being processed.
+## Usage
 
-Once all video files have been processed, the script will indicate completion.
+1. Run the script by typing `python face_sorter.py` in your terminal.
+2. When prompted, select the input directory (containing the images) and the output directory (where the sorted images will be stored).
 
-Configuration
-Output Directory: By default, the extracted frames will be saved in "C:\SD\ALL_LORA_TRAINED\00inprogress\face_recognition\input". You can modify the base_output_dir variable in the script to specify a different output directory.
+## Dependencies
 
-Frame Extraction Rate: The default extraction rate is set to every 30 frames. Adjust the frame_rate variable in the script to change it.
+- face_recognition
+- scikit-learn
+- tkinter
+- tqdm
+- PIL
+- imagehash
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the terms of the MIT license.
